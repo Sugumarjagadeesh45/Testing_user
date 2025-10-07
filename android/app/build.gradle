@@ -26,11 +26,10 @@ android {
 
     signingConfigs {
         release {
-            // Match these with your gradle.properties
-            storeFile file(project.property("MYAPP_RELEASE_STORE_FILE"))
-            storePassword project.property("MYAPP_RELEASE_STORE_PASSWORD")
-            keyAlias project.property("MYAPP_RELEASE_KEY_ALIAS")
-            keyPassword project.property("MYAPP_RELEASE_KEY_PASSWORD")
+            storeFile file('my-release-key.keystore')
+            storePassword '123456'
+            keyAlias 'my-key-alias'
+            keyPassword '123456'
         }
     }
 
@@ -41,11 +40,6 @@ android {
             shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
-    }
-
-    // Optional: Hermes support
-    packagingOptions {
-        pickFirst '**/libc++_shared.so'
     }
 }
 
