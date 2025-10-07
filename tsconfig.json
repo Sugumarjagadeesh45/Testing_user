@@ -1,0 +1,11 @@
+{
+  "extends": "@react-native/typescript-config",
+  "compilerOptions": {
+    "typeRoots": [
+      "./src/types",
+      "./node_modules/@types"
+    ],
+    "skipLibCheck": true
+  },
+  "include": ["src"]
+}
