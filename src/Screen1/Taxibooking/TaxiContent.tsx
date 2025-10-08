@@ -1091,13 +1091,13 @@ const sendLocationUpdate = async (latitude, longitude) => {
     if (token) {
       const backendUrl = getBackendUrl();
       await axios.post(`${backendUrl}/api/users/save-location`, {
-        latitude,
-        longitude
-      }, {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      });
+  latitude,
+  longitude
+}, {
+  headers: {
+    Authorization: `Bearer ${token}`
+  }
+});
     }
   } catch (error) {
     console.error('Error sending location update:', error);
@@ -2565,6 +2565,18 @@ const styles = StyleSheet.create({
 });
 
 export default TaxiContent;
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
