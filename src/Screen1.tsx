@@ -265,29 +265,32 @@ export default function Screen1() {
     setMenuVisible(false);
   };
 
-  const handleLogout = async () => {
-    try {
-      setMenuVisible(false);
-      await auth().signOut();
-      await AsyncStorage.multiRemove([
-        'authToken',
-        'userToken',
-        'isRegistered',
-        'name',
-        'address',
-        'phoneNumber',
-        'customerId',
-        'profilePicture',
-      ]);
-      navigation.reset({
-        index: 0,
-        routes: [{ name: 'WelcomeScreen3' }],
-      });
-    } catch (err) {
-      console.error('Logout error:', err);
-      Alert.alert('Error', 'Failed to log out. Please try again.');
-    }
-  };
+const handleLogout = async () => {
+  try {
+    setMenuVisible(false);
+    await auth().signOut();
+    await AsyncStorage.multiRemove([
+      'authToken',
+      'userToken',
+      'isRegistered',
+      'name',
+      'address',
+      'phoneNumber',
+      'customerId',
+      'profilePicture',
+      'verificationId',
+    ]);
+    
+    // Navigate directly to login screen
+    navigation.reset({
+      index: 0,
+      routes: [{ name: 'WelcomeScreen3' }],
+    });
+  } catch (err) {
+    console.error('Logout error:', err);
+    Alert.alert('Error', 'Failed to log out. Please try again.');
+  }
+};
 
   const getCategoryIcon = (categoryName: string) => {
     switch (categoryName.toLowerCase()) {
