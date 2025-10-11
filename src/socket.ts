@@ -61,7 +61,7 @@
 
 
 import { io } from "socket.io-client";
-const socket = io("https://1fa4634fb106.ngrok-free.app", {
+const socket = io("https://0b99d73ef6b3.ngrok-free.app", {
   transports: ["websocket"],   // Force WebSocket transport
   autoConnect: true,           // Connect immediately when imported
   reconnection: true,          // Auto reconnect if connection drops
