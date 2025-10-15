@@ -13,7 +13,7 @@ const LOCAL_BACKEND = Platform.select({
 });
 
 // Live server URL
-const LIVE_BACKEND = 'https://backend-code-a7ke.onrender.com';
+const LIVE_BACKEND = 'https://new-fullbackend.onrender.com';
 
 // Current backend URL based on toggle
 const API_BASE_URL = useLocalhost ? LOCAL_BACKEND : LIVE_BACKEND;
